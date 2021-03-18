@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Quiz Page</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+        <link rel="stylesheet" type="text/css" href="game.css"/>
+       
+    </head>
+    <body>
+        <div class="container">
+            <div id="game">
+                <div id="hud">
+                    <div class="hud-item">
+                        <p id="progresstext" class="hud-prefix">
+                            Question
+                        </p>
+                        <div id="progressbar">
+                            <div id="progressbarfull"> </div>
+                        </div>
+                    </div>
+                    <div class="hud-item">
+                        <p class="hud-prefix">
+                            score
+                        </p>
+                        <h1 class="hud-main-text" id="score">
+                            0
+                        </h1>
+                    </div>
+                    </div>
+                    <h1 id="question">Commonly Used Data Types does NOT include?</h1>
+                    <div class="choicecontainer">
+                        <p class="choiceprefix">A</p>
+                        <p class="choicetext" data-number="1">choice 1</p>
+                    </div>
+    
+                    <div class="choicecontainer">
+                    <p class="choiceprefix">B</p>
+                    <p class="choicetext" data-number="2">choice 2</p>
+                    </div>
+    
+                    <div class="choicecontainer">
+                    <p class="choiceprefix">C</p>
+                    <p class="choicetext" data-number="3">choice 3</p>
+                    </div>
+                </div>
+
+        </div>  
+    
+        <script src="script.js"></script>
+    </body>
+</html>

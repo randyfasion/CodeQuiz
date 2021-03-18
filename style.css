@@ -1,0 +1,30 @@
+#home {
+    text-align: center;
+}
+
+#paragraph{
+    font-size: 20px;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+.hudprefix,
+.hudmaintext {
+    margin-left: 90%;
+    
+}
+#highscorebtn{
+    margin-right: 90%;
+}
+.btn{
+    display: inline-block;
+    margin-bottom: 10px;
+    width: 25%;
+    border-radius: 4px;
+    background: rgb(46, 46, 180);
+    font-size: 25px;
+    color: white;
+}
+.btn:hover{
+    cursor: pointer;
+    transform: scale(1.02);
+    box-shadow: 0 5px 5px 0 rgb(46, 46, 180);
