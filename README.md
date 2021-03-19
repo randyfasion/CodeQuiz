@@ -8,7 +8,7 @@ For this assignment we created a timed coding quiz with multiple choice question
 As a coding bootcamp student I want to take a timed quiz on Javascript fundamentals that stores high scores so that I can guage progress compared to others. 
 
 
-##Getting Started
+## Getting Started
 
     - Underneath the hood of this quiz I used a HTML page, CSS, and Javascript to create the necessary formatting and functions for the site. 
 
@@ -33,11 +33,12 @@ As a coding bootcamp student I want to take a timed quiz on Javascript fundament
         - website then stores initials and scores for future references 
 
 
-![CodeQuiz]()
+![CodeQuiz](CodeQuizPreview.png)
 
 
 Link to Deployed wedsite:
-
+https://randyfasion.github.io/CodeQuiz/
 
 
 Link to GitHub Repository:
+https://github.com/randyfasion/CodeQuiz
