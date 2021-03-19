@@ -5,7 +5,7 @@ var progressbarfull = document.querySelector("#progressbarfull");
 var choices = Array.from(document.querySelectorAll(".choicetext"));
 //var timer = document.querySelector("#timer");
 
-var currentquestion ={};
+var currentquestion =[];
 var acceptinganswers = true;
 var score = 0;
 var questioncounter = 0;
@@ -14,23 +14,23 @@ var availablequestions = [];
 var questions = [
     {
         question: "The condition in an if/else statement is enclosed within _______.",
-        choice1: "1. Quotes",
-        choice2: "2. curly brackets",
-        choice3: "3. parentheses",
+        choice1: "Quotes",
+        choice2: "curly brackets",
+        choice3: "parentheses",
         answer: 2,
     },
     {
         question: "Commonly Used Data Types does NOT include?",
-        choice1: "1. strings",
-        choice2: "2. booleans",
-        choice3: "3. alerts",
+        choice1: "strings",
+        choice2: "booleans",
+        choice3: "alerts",
         answer: 3,
     },
     {
         question: "Arrays in javascript can be used to store _____.",
-        choice1: "1. numbers and strings",
-        choice2: "2. booleans",
-        choice3: "3. all of the above",
+        choice1: "numbers and strings",
+        choice2: "booleans",
+        choice3: "all of the above",
         answer: 3,
     }
 ]
@@ -41,18 +41,39 @@ var MAX_QUESTIONS = 3;
 
 function startgame(){
     questioncounter=0;
+    score = 0;
     availablequestions=[...questions];
     getnewquestion();
+
 }
 function getnewquestion(){
-   if(availablequestions.length===0 || questioncounter>MAX_QUESTIONS){  
-localStorage.setItem("mostrecentscore", score);
+    document.getElementById("question").innerHTML=questions[0].question;
+    document.getElementById("1").innerHTML=questions[0].choice1;
+    document.getElementById("2").innerHTML=questions[0].choice2;
+    document.getElementById("3").innerHTML=questions[0].choice3;
+    // if(answer=2){
+    //     document.getElementById("question").innerHTML=questions[1].question;
+    // }
 
-return window.location.assign("end.html");
+
+   if(availablequestions.length===0 || questioncounter>MAX_QUESTIONS){  
+//localStorage.setItem("mostrecentscore", score);
+
+//return window.location.assign("/end.html");
+document.getElementById("question").innerHTML=questions[1].question;
+document.getElementById("1").innerHTML=questions[1].choice1;
+    document.getElementById("2").innerHTML=questions[1].choice2;
+    document.getElementById("3").innerHTML=questions[1].choice3;
+
     }
+   
+    //     document.getElementById("1").innerHTML=questions[2].choice1;
+    // document.getElementById("2").innerHTML=questions[2].choice2;
+    // document.getElementById("3").innerHTML=questions[2].choice3;
+    // }
 questioncounter++
-progresstext.innertext = 'question ${questioncounter} of ${MAX_QUESTIONS}';
-progressbarfull.style.width = '${(questioncounter/MAX_QUESTIONS) * 100}%';
+progresstext.innertext = `question ${questioncounter} of ${MAX_QUESTIONS}`;
+progressbarfull.style.width = `${(questioncounter/MAX_QUESTIONS) * 100}%`;
 
 
 
@@ -61,7 +82,7 @@ progressbarfull.style.width = '${(questioncounter/MAX_QUESTIONS) * 100}%';
   question.innertext = currentquestion.question; 
    
   choices.forEach(choice =>{
-      var number = choice.dataset["number"];
+      var number = choice.id["number"]; 
       choice.innertext = currentquestion["choice"+number];
   })
       availablequestions.splice(questionsindex, 1)
@@ -69,13 +90,18 @@ progressbarfull.style.width = '${(questioncounter/MAX_QUESTIONS) * 100}%';
       acceptinganswers = true;
   
 }
+currentquestionindex = 0;
+var currentquestion = questions[currentquestionindex];
+console.log(currentquestion);
+
+
 choices.forEach(choice =>{
     choice.addEventListener("click", e =>{
         if(!acceptinganswers) return;
 
         acceptinganswers=false;
         var selectedchoice = e.target;
-        var selectedanswer = selectedchoice.dataset["number"];
+        var selectedanswer = selectedchoice.id["number"];
 
         var classtoapply = selectedanswer == currentquestion.answer ? "correct": "incorrect";
 
@@ -100,4 +126,5 @@ incrementscore = num =>{
     
 }
 startgame();
-console.log(getnewquestion);
+//console.log(getnewquestion);
+//onsole.log(questions);
