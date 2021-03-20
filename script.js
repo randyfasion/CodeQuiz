@@ -81,7 +81,7 @@ progresstext.innertext = `question ${questioncounter} of ${MAX_QUESTIONS}`;
 progressbarfull.style.width = `${(questioncounter/MAX_QUESTIONS) * 100}%`;
 
 
-
+//Variable to generate random question
   var questionsindex = Math.floor(Math.random()*availablequestions.length);  
   currentquestion = availablequestions[questionsindex];
   question.innertext = currentquestion.question; 
