@@ -1,3 +1,6 @@
+//Assignment code
+
+//declare global variables
 var question = document.querySelector("#question");
 var progresstext = document.querySelector("#progresstext");
 var scoretext = document.querySelector("#score");
@@ -11,6 +14,7 @@ var score = 0;
 var questioncounter = 0;
 var availablequestions = [];
  
+//array for the 3 questions created
 var questions = [
     {
         question: "The condition in an if/else statement is enclosed within _______.",
@@ -38,7 +42,7 @@ var SCORE_POINTS=100;
 var MAX_QUESTIONS = 3;
 //var timer = 0;
 
-
+//create function to begin quiz
 function startgame(){
     questioncounter=0;
     score = 0;
@@ -46,6 +50,7 @@ function startgame(){
     getnewquestion();
 
 }
+//create function to grab the three questions 
 function getnewquestion(){
     document.getElementById("question").innerHTML=questions[0].question;
     document.getElementById("1").innerHTML=questions[0].choice1;
